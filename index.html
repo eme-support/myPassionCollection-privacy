@@ -153,6 +153,10 @@
     text-transform:uppercase;
     padding:.5em 1em; border-radius:100px;
   }
+  /* La pastille mène à la fiche de l'app (lien sans code de pays : l'App Store choisit la boutique de l'appareil). */
+  a.badge{text-decoration:none; transition:filter .15s ease, transform .15s ease;}
+  a.badge:hover{filter:brightness(1.15); transform:translateY(-1px);}
+  a.badge:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
   .badge::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--cream); animation:pulse 2.2s ease-in-out infinite;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
   @media (prefers-reduced-motion:reduce){.badge::before{animation:none;}}
@@ -339,7 +343,7 @@
         <span data-i18n="brand_by">par</span> myPassionCollection · EMkitSoft
       </p>
       <div class="hero-meta hero-anim d4">
-        <span class="badge" data-i18n="badge_soon">Disponible sur l'App Store</span>
+        <a class="badge" href="https://apps.apple.com/app/id6806805286" data-i18n="badge_soon">Disponible sur l'App Store</a>
         <span class="platforms" data-i18n="platforms_line">iPhone · iPad · Mac — vos données restent les vôtres, dans votre iCloud</span>
       </div>
     </div>
